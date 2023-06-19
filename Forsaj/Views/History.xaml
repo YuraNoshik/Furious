@@ -1,0 +1,82 @@
+﻿<Page x:Class="Forsaj.Views.History"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Forsaj.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="482" d:DesignWidth="586"
+      Title="History">
+
+    <Grid>
+        <TextBox x:Name="tbSearchHistory" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1,21,0,0" VerticalAlignment="Top" Width="241" Height="27" Opacity="0.5" TextWrapping="Wrap" />
+        <DatePicker x:Name="dpHistory" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="417,21,0,0" VerticalAlignment="Top" Height="29" Width="162" />
+        <TextBlock Text="Поиск клиента"
+            Foreground="White"
+            FontSize="12"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                             
+            Margin="2,3,457,464" RenderTransformOrigin="0.5,0.533"/>
+        <TextBlock Text="Поиск по дате"
+            Foreground="White"
+            FontSize="12"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                             
+            Margin="417,3,41,464" RenderTransformOrigin="0.5,0.533"/>
+        <ListView x:Name="listHistory" Margin="-2,59,2,2" Background="#a4a4a4" Width="586">
+            <ListView.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="16"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Имя" DisplayMemberBinding="{Binding Clients.clientName}" Width="120">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Clients.clientName}" Background="#DDDDDD"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Фамилия" DisplayMemberBinding="{Binding Clients.clientSurname}" Width="140">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Clients.clientSurname}" Background="#DDDDDD"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Отчество" DisplayMemberBinding="{Binding Clients.clientPatronymic}" Width="160">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Clients.clientPatronymic}" Background="#DDDDDD"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Дата" DisplayMemberBinding="{Binding visitDate, StringFormat={}{0:dd.MM.yyyy}}" Width="90">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding visitDate}" Background="#DDDDDD" TextAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Время" DisplayMemberBinding="{Binding visitTime, StringFormat={}{0:hh\\:mm}}" Width="70">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding visitTime, StringFormat={}{0:hh\\:mm}}" Background="#DDDDDD" TextAlignment="Center"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock x:Name="lbAmountVisits"
+            Foreground="White"
+            FontSize="12"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                             
+            Margin="251,27,208,440" RenderTransformOrigin="0.5,0.533"/>
+        <Image x:Name="picRefreshDateHistory" Margin="383,25,178,437" Source="/refresh123.png" Stretch="Fill" MouseDown="picRefreshDate_MouseDown"/>
+
+    </Grid>
+</Page>

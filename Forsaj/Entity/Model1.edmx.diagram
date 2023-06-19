@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="68957f5b8b4a4a02a8efdaceb7748d11" Name="Diagram1">
+        <EntityTypeShape EntityType="ForsajFitnessModel.Abonements" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForsajFitnessModel.Clients" Width="1.5" PointX="3" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForsajFitnessModel.Roles" Width="1.5" PointX="7.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForsajFitnessModel.Sales" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForsajFitnessModel.Staff" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForsajFitnessModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ForsajFitnessModel.VisitHistory" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="ForsajFitnessModel.FK__Clients__aboneme__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="ForsajFitnessModel.FK__Sales__abonement__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="ForsajFitnessModel.FK__Sales__clientID__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="ForsajFitnessModel.FK__VisitHist__clien__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="ForsajFitnessModel.FK__Staff__roleID__44FF419A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

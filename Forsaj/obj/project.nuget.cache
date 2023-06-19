@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "ty+6MJ5f0WvzqD1XFdhVW/d7A5EDLis8cTFBjgSMKon7/EmagZj+c+RCUB/2UKhuGRki4TK4JN/cKdXNacDwSg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\yuran\\source\\repos\\Forsaj\\Forsaj\\Forsaj.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\yuran\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\yuran\\.nuget\\packages\\entityframework.ru\\6.2.0\\entityframework.ru.6.2.0.nupkg.sha512",
+    "C:\\Users\\yuran\\.nuget\\packages\\nfc-acr122u\\1.0.0\\nfc-acr122u.1.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Версия обнаруженного пакета нарушает ограничение зависимости: EntityFramework.ru 6.2.0 требуется EntityFramework (= 6.2.0), но в результате разрешения получена версия EntityFramework 6.4.4.",
+      "libraryId": "EntityFramework",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win",
+        ".NETFramework,Version=v4.7.2/win-x64",
+        ".NETFramework,Version=v4.7.2/win-x86"
+      ]
+    }
+  ]
+}

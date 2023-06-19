@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище ForsajFitnessModelContainer" CdmEntityContainer="ForsajFitnessEntities1">
+    <EntitySetMapping Name="Abonements">
+      <EntityTypeMapping TypeName="ForsajFitnessModel.Abonements">
+        <MappingFragment StoreEntitySet="Abonements">
+          <ScalarProperty Name="abonementID" ColumnName="abonementID" />
+          <ScalarProperty Name="abonementType" ColumnName="abonementType" />
+          <ScalarProperty Name="abonementCost" ColumnName="abonementCost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="ForsajFitnessModel.Clients">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+          <ScalarProperty Name="abonementID" ColumnName="abonementID" />
+          <ScalarProperty Name="clientName" ColumnName="clientName" />
+          <ScalarProperty Name="clientSurname" ColumnName="clientSurname" />
+          <ScalarProperty Name="clientPatronymic" ColumnName="clientPatronymic" />
+          <ScalarProperty Name="clientPhoneNumber" ColumnName="clientPhoneNumber" />
+          <ScalarProperty Name="clientCountOfTrainings" ColumnName="clientCountOfTrainings" />
+          <ScalarProperty Name="clientUID" ColumnName="clientUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="ForsajFitnessModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="roleName" ColumnName="roleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="ForsajFitnessModel.Sales">
+        <MappingFragment StoreEntitySet="Sales">
+          <ScalarProperty Name="saleID" ColumnName="saleID" />
+          <ScalarProperty Name="abonementID" ColumnName="abonementID" />
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+          <ScalarProperty Name="saleDate" ColumnName="saleDate" />
+          <ScalarProperty Name="saleTime" ColumnName="saleTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staff">
+      <EntityTypeMapping TypeName="ForsajFitnessModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="staffID" ColumnName="staffID" />
+          <ScalarProperty Name="roleID" ColumnName="roleID" />
+          <ScalarProperty Name="staffName" ColumnName="staffName" />
+          <ScalarProperty Name="staffSurname" ColumnName="staffSurname" />
+          <ScalarProperty Name="staffPatronymic" ColumnName="staffPatronymic" />
+          <ScalarProperty Name="staffLogin" ColumnName="staffLogin" />
+          <ScalarProperty Name="staffPassword" ColumnName="staffPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ForsajFitnessModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VisitHistory">
+      <EntityTypeMapping TypeName="ForsajFitnessModel.VisitHistory">
+        <MappingFragment StoreEntitySet="VisitHistory">
+          <ScalarProperty Name="visitID" ColumnName="visitID" />
+          <ScalarProperty Name="clientID" ColumnName="clientID" />
+          <ScalarProperty Name="visitTime" ColumnName="visitTime" />
+          <ScalarProperty Name="visitDate" ColumnName="visitDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
