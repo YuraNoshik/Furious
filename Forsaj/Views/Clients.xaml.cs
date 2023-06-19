@@ -41,7 +41,7 @@ namespace Forsaj.Views
                 cbSort.SelectedIndex = 0;
 
             }
-            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Interval = TimeSpan.FromSeconds(0.5);
             timer.Start();
             timer.Tick += Timer_Tick;
             LoadClientsToGrid();
@@ -53,13 +53,13 @@ namespace Forsaj.Views
 
         public void LoadClientsToGrid()
         {
-            timer.Start();
+            
             listClients.Items.Clear();
             string searchText = tbSearch.Text.Trim().ToLower();
 
             if (!string.IsNullOrEmpty(searchText))
             {
-                timer.Stop();
+                
                 string[] searchWords = searchText.Split(' ');
 
                 using (ForsajFitnessEntities1 context = new ForsajFitnessEntities1())
@@ -150,7 +150,8 @@ namespace Forsaj.Views
                             AbonementType = client.Abonements.abonementType,
                             UID = client.clientUID
                         };
-
+                        countAll = clients.Count();
+                        lbCountAll.Text = countAll.ToString();
                         listClients.Items.Add(listViewItem);
                     }
                 }
@@ -161,7 +162,7 @@ namespace Forsaj.Views
         DispatcherTimer timer = new DispatcherTimer();
         public void RefreshList()
         {
-
+            timer.Start();
             using (ForsajFitnessEntities1 context = new ForsajFitnessEntities1())
             {
                 List<Entity.Clients> clients = context.Clients.ToList();
@@ -179,7 +180,8 @@ namespace Forsaj.Views
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            RefreshList();
+            //RefreshList();
+            LoadClientsToGrid();
         }
         private void cbAbonement_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

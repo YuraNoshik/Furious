@@ -15,10 +15,10 @@ namespace Forsaj
     public partial class MainWindow : Window
     {
         private static MyACR122U acr122u = new MyACR122U();
-
+        
         DispatcherTimer timer = new DispatcherTimer();
         private bool isAuthorized = false;
-        //ClubMain clubMain = new ClubMain();
+        ClubMain clubMain = new ClubMain();
         public MainWindow()
         {
             InitializeComponent();
@@ -31,7 +31,7 @@ namespace Forsaj
             {
                 MessageBox.Show(this, "Failed to find a reader connected to the system", "No reader connected");
             }
-
+            timer.Interval = TimeSpan.FromSeconds(1);
 
             timer.Tick += Timer_Tick;
 
@@ -102,15 +102,16 @@ namespace Forsaj
                                 break;
                             case 1:
                                 this.Close();
-                                new ClubMain().Show();
+                                clubMain.Show();
                                 MessageBox.Show($"Здравствуйте, {staff.staffName} {staff.staffPatronymic} \n Вы вошли как {role.roleName}");
 
                                 break;
                             case 2:
                                 this.Close();
-                                clubMain.btnСalculation.Visibility = Visibility.Visible;
+                                
+                                clubMain.btnTools.Visibility = Visibility.Hidden;
+                                clubMain.Show();
                                 MessageBox.Show($"Здравствуйте, {staff.staffName} {staff.staffPatronymic} \n Вы вошли как {role.roleName}");
-                                new ClubMain().Show();
 
                                 break;
                         }

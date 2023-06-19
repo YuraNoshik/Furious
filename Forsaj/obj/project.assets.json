@@ -107,6 +107,59 @@
         }
       }
     },
+    ".NETFramework,Version=v4.7.2/win-arm64": {
+      "EntityFramework/6.4.4": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.SqlServer.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/EntityFramework.dll": {
+            "related": ".SqlServer.xml;.xml"
+          }
+        },
+        "build": {
+          "buildTransitive/EntityFramework.props": {},
+          "buildTransitive/EntityFramework.targets": {}
+        }
+      },
+      "EntityFramework.ru/6.2.0": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework": "[6.2.0]"
+        },
+        "resource": {
+          "lib/net45/ru/EntityFramework.SqlServer.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net45/ru/EntityFramework.resources.dll": {
+            "locale": "ru"
+          }
+        }
+      },
+      "NFC-ACR122U/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/PCSC.dll": {},
+          "lib/Sydesoft.NfcDevice.ACR122U.dll": {}
+        },
+        "runtime": {
+          "lib/PCSC.dll": {},
+          "lib/Sydesoft.NfcDevice.ACR122U.dll": {}
+        }
+      }
+    },
     ".NETFramework,Version=v4.7.2/win-x64": {
       "EntityFramework/6.4.4": {
         "type": "package",
@@ -313,29 +366,21 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yuran\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\vb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yuran\\source\\repos\\Forsaj\\Forsaj\\Forsaj.csproj",
+      "projectUniqueName": "C:\\Users\\vb\\source\\repos\\Furious\\Forsaj\\Forsaj.csproj",
       "projectName": "Forsaj",
-      "projectPath": "C:\\Users\\yuran\\source\\repos\\Forsaj\\Forsaj\\Forsaj.csproj",
-      "packagesPath": "C:\\Users\\yuran\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yuran\\source\\repos\\Forsaj\\Forsaj\\obj\\",
+      "projectPath": "C:\\Users\\vb\\source\\repos\\Furious\\Forsaj\\Forsaj.csproj",
+      "packagesPath": "C:\\Users\\vb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vb\\source\\repos\\Furious\\Forsaj\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\yuran\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\vb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net472"
@@ -372,6 +417,9 @@
       "win": {
         "#import": []
       },
+      "win-arm64": {
+        "#import": []
+      },
       "win-x64": {
         "#import": []
       },
@@ -385,11 +433,12 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Версия обнаруженного пакета нарушает ограничение зависимости: EntityFramework.ru 6.2.0 требуется EntityFramework (= 6.2.0), но в результате разрешения получена версия EntityFramework 6.4.4.",
+      "message": "Detected package version outside of dependency constraint: EntityFramework.ru 6.2.0 requires EntityFramework (= 6.2.0) but version EntityFramework 6.4.4 was resolved.",
       "libraryId": "EntityFramework",
       "targetGraphs": [
         ".NETFramework,Version=v4.7.2",
         ".NETFramework,Version=v4.7.2/win",
+        ".NETFramework,Version=v4.7.2/win-arm64",
         ".NETFramework,Version=v4.7.2/win-x64",
         ".NETFramework,Version=v4.7.2/win-x86"
       ]
