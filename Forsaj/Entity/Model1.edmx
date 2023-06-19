@@ -4,14 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ForsajFitnessModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище ForsajFitnessModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Abonements">
           <Key>
             <PropertyRef Name="abonementID" />
           </Key>
           <Property Name="abonementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="abonementType" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="abonementCost" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="abonementCost" Type="decimal" Precision="10" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="Clients">
           <Key>
@@ -25,6 +25,13 @@
           <Property Name="clientPhoneNumber" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="clientCountOfTrainings" Type="int" Nullable="false" />
           <Property Name="clientUID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Days">
+          <Key>
+            <PropertyRef Name="dayID" />
+          </Key>
+          <Property Name="dayID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dayName" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -42,6 +49,17 @@
           <Property Name="clientID" Type="int" Nullable="false" />
           <Property Name="saleDate" Type="date" Nullable="false" />
           <Property Name="saleTime" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="trainingID" />
+          </Key>
+          <Property Name="trainingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="trainerID" Type="int" Nullable="false" />
+          <Property Name="dayID" Type="int" Nullable="false" />
+          <Property Name="trainingTimeStart" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="trainingDate" Type="date" Nullable="false" />
+          <Property Name="trainingDescription" Type="nvarchar" MaxLength="256" />
         </EntityType>
         <EntityType Name="Staff">
           <Key>
@@ -64,6 +82,13 @@
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Trainers">
+          <Key>
+            <PropertyRef Name="trainerID" />
+          </Key>
+          <Property Name="trainerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="trainerFIO" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="VisitHistory">
           <Key>
@@ -134,13 +159,40 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Schedule_Days">
+          <End Role="Days" Type="Self.Days" Multiplicity="1" />
+          <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Days">
+              <PropertyRef Name="dayID" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="dayID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule_Trainers">
+          <End Role="Trainers" Type="Self.Trainers" Multiplicity="1" />
+          <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trainers">
+              <PropertyRef Name="trainerID" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="trainerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Хранилище ForsajFitnessModelContainer">
           <EntitySet Name="Abonements" EntityType="Self.Abonements" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Days" EntityType="Self.Days" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sales" EntityType="Self.Sales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schedule" EntityType="Self.Schedule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trainers" EntityType="Self.Trainers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VisitHistory" EntityType="Self.VisitHistory" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Clients__aboneme__3F466844" Association="Self.FK__Clients__aboneme__3F466844">
             <End Role="Abonements" EntitySet="Abonements" />
@@ -162,9 +214,16 @@
             <End Role="Clients" EntitySet="Clients" />
             <End Role="VisitHistory" EntitySet="VisitHistory" />
           </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Days" Association="Self.FK_Schedule_Days">
+            <End Role="Days" EntitySet="Days" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Trainers" Association="Self.FK_Schedule_Trainers">
+            <End Role="Trainers" EntitySet="Trainers" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ForsajFitnessModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -174,7 +233,7 @@
           </Key>
           <Property Name="abonementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="abonementType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="abonementCost" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="abonementCost" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
           <NavigationProperty Name="Clients" Relationship="Self.FK__Clients__aboneme__3F466844" FromRole="Abonements" ToRole="Clients" />
           <NavigationProperty Name="Sales" Relationship="Self.FK__Sales__abonement__48CFD27E" FromRole="Abonements" ToRole="Sales" />
         </EntityType>
@@ -335,7 +394,71 @@
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Staff" EntitySet="Staff" />
           </AssociationSet>
+          <EntitySet Name="Days" EntityType="ForsajFitnessModel.Days" />
+          <EntitySet Name="Schedule" EntityType="ForsajFitnessModel.Schedule" />
+          <EntitySet Name="Trainers" EntityType="ForsajFitnessModel.Trainers" />
+          <AssociationSet Name="FK_Schedule_Days" Association="ForsajFitnessModel.FK_Schedule_Days">
+            <End Role="Days" EntitySet="Days" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Schedule_Trainers" Association="ForsajFitnessModel.FK_Schedule_Trainers">
+            <End Role="Trainers" EntitySet="Trainers" />
+            <End Role="Schedule" EntitySet="Schedule" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Days">
+          <Key>
+            <PropertyRef Name="dayID" />
+          </Key>
+          <Property Name="dayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dayName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Schedule" Relationship="ForsajFitnessModel.FK_Schedule_Days" FromRole="Days" ToRole="Schedule" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="trainingID" />
+          </Key>
+          <Property Name="trainingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="trainerID" Type="Int32" Nullable="false" />
+          <Property Name="dayID" Type="Int32" Nullable="false" />
+          <Property Name="trainingTimeStart" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trainingDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="trainingDescription" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Days" Relationship="ForsajFitnessModel.FK_Schedule_Days" FromRole="Schedule" ToRole="Days" />
+          <NavigationProperty Name="Trainers" Relationship="ForsajFitnessModel.FK_Schedule_Trainers" FromRole="Schedule" ToRole="Trainers" />
+        </EntityType>
+        <EntityType Name="Trainers">
+          <Key>
+            <PropertyRef Name="trainerID" />
+          </Key>
+          <Property Name="trainerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="trainerFIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Schedule" Relationship="ForsajFitnessModel.FK_Schedule_Trainers" FromRole="Trainers" ToRole="Schedule" />
+        </EntityType>
+        <Association Name="FK_Schedule_Days">
+          <End Type="ForsajFitnessModel.Days" Role="Days" Multiplicity="1" />
+          <End Type="ForsajFitnessModel.Schedule" Role="Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Days">
+              <PropertyRef Name="dayID" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="dayID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Schedule_Trainers">
+          <End Type="ForsajFitnessModel.Trainers" Role="Trainers" Multiplicity="1" />
+          <End Type="ForsajFitnessModel.Schedule" Role="Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trainers">
+              <PropertyRef Name="trainerID" />
+            </Principal>
+            <Dependent Role="Schedule">
+              <PropertyRef Name="trainerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -415,6 +538,34 @@
                 <ScalarProperty Name="clientID" ColumnName="clientID" />
                 <ScalarProperty Name="visitTime" ColumnName="visitTime" />
                 <ScalarProperty Name="visitDate" ColumnName="visitDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Days">
+            <EntityTypeMapping TypeName="ForsajFitnessModel.Days">
+              <MappingFragment StoreEntitySet="Days">
+                <ScalarProperty Name="dayName" ColumnName="dayName" />
+                <ScalarProperty Name="dayID" ColumnName="dayID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedule">
+            <EntityTypeMapping TypeName="ForsajFitnessModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedule">
+                <ScalarProperty Name="trainingDescription" ColumnName="trainingDescription" />
+                <ScalarProperty Name="trainingDate" ColumnName="trainingDate" />
+                <ScalarProperty Name="trainingTimeStart" ColumnName="trainingTimeStart" />
+                <ScalarProperty Name="dayID" ColumnName="dayID" />
+                <ScalarProperty Name="trainerID" ColumnName="trainerID" />
+                <ScalarProperty Name="trainingID" ColumnName="trainingID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trainers">
+            <EntityTypeMapping TypeName="ForsajFitnessModel.Trainers">
+              <MappingFragment StoreEntitySet="Trainers">
+                <ScalarProperty Name="trainerFIO" ColumnName="trainerFIO" />
+                <ScalarProperty Name="trainerID" ColumnName="trainerID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

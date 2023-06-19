@@ -204,12 +204,12 @@
             FontSize="16"
             FontWeight="Medium"
             FontFamily="Montserrat"                             
-            Margin="145,-44,282,509" Width="NaN"/>
+            Margin="142,-47,285,512" Width="NaN"/>
         <TextBlock x:Name="lbCountAll" Text="0"
             Foreground="White"
             FontSize="16"
             FontWeight="Medium"
             FontFamily="Montserrat"                             
-            Margin="322,-44,253,510"/>
+            Margin="322,-47,253,513"/>
     </Grid>
 </Page>

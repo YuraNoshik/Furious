@@ -97,8 +97,8 @@ namespace Forsaj.Views
                 using (ForsajFitnessEntities1 context = new ForsajFitnessEntities1())
                 {
                     var uidExisting = context.Clients.Where(x => x.clientUID == tbEditUID.Text).FirstOrDefault();
-                    if (uidExisting == null)
-                    {
+                    //if (uidExisting == null)
+                    //{
                         // Получите экземпляр клиента из базы данных
                         var clientInDb = context.Clients.FirstOrDefault(c => c.clientID == _client.clientID);
 
@@ -123,11 +123,11 @@ namespace Forsaj.Views
 
                             // Закройте форму редактирования
                             Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Клиент не найден в базе данных.");
-                        }
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("Клиент не найден в базе данных.");
+                        //}
                     }
                     else
                     {

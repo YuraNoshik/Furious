@@ -13,29 +13,30 @@
             <DatePicker x:Name="dpStart" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="3,22,0,0" VerticalAlignment="Top" Height="29" Width="162"/>
             <TextBlock Text="Начало периода"
             Foreground="White"
-            FontSize="12"
+            FontSize="16"
             FontWeight="Medium"
             FontFamily="Montserrat"                             
-            Margin="3,4,455,463" RenderTransformOrigin="0.5,0.533"/>
+            Margin="3,2,455,462" RenderTransformOrigin="0.5,0.533"/>
             <DatePicker x:Name="dpEnd" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" Height="29" Width="162"/>
             <TextBlock Text="Конец периода"
                 Foreground="White"
-                FontSize="12"
+                FontSize="16"
                 FontWeight="Medium"
                 FontFamily="Montserrat"                             
-                Margin="213,5,245,462" RenderTransformOrigin="0.5,0.533"/>
+                Margin="213,3,245,458" RenderTransformOrigin="0.5,0.533"/>
             <TextBlock x:Name="lbAmoutCost" Text="0"
                 Foreground="White"
-                FontSize="12"
+                FontSize="16
+                       "
                 FontWeight="Medium"
                 FontFamily="Montserrat"                             
-                Margin="397,13,11,454" RenderTransformOrigin="0.5,0.533"/>
+                Margin="391,13,17,454" RenderTransformOrigin="0.5,0.533"/>
             <TextBlock x:Name="lbAmoutAbonements" Text="0"
                 Foreground="White"
-                FontSize="12"
+                FontSize="16"
                 FontWeight="Medium"
                 FontFamily="Montserrat"                             
-                Margin="398,35,14,432" RenderTransformOrigin="0.5,0.533"/>
+                Margin="391,35,21,432" RenderTransformOrigin="0.5,0.533"/>
             <Image x:Name="picRefreshDate" Margin="176,27,385,435" Source="/refresh123.png" Stretch="Fill" MouseDown="picRefreshDate_MouseDown"/>
 
         </Grid>

@@ -1,24 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "kxdDvSiAhfM5jz8M6Lk9BIWImaQZ17P0bFmIF3eSwcRQGfTuliCb4z3gsBx3+wNrHGSSbBi62R1TtSOoKn0bUA==",
+  "dgSpecHash": "/kyowceBPDuacpTqdTt2piNs+nt8gC8XB4Y5MalIg4IyEYrugmdTUIPp465FxnbDAPpK4h/yRkvKtpXDRud/ng==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vb\\source\\repos\\Furious\\Forsaj\\Forsaj.csproj",
+  "projectFilePath": "C:\\Users\\yuran\\Source\\Repos\\Furious\\Forsaj\\Forsaj.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\vb\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
-    "C:\\Users\\vb\\.nuget\\packages\\entityframework.ru\\6.2.0\\entityframework.ru.6.2.0.nupkg.sha512",
-    "C:\\Users\\vb\\.nuget\\packages\\nfc-acr122u\\1.0.0\\nfc-acr122u.1.0.0.nupkg.sha512"
+    "C:\\Users\\yuran\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\yuran\\.nuget\\packages\\entityframework.ru\\6.2.0\\entityframework.ru.6.2.0.nupkg.sha512",
+    "C:\\Users\\yuran\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
+    "C:\\Users\\yuran\\.nuget\\packages\\nfc-acr122u\\1.0.0\\nfc-acr122u.1.0.0.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: EntityFramework.ru 6.2.0 requires EntityFramework (= 6.2.0) but version EntityFramework 6.4.4 was resolved.",
+      "message": "Версия обнаруженного пакета нарушает ограничение зависимости: EntityFramework.ru 6.2.0 требуется EntityFramework (= 6.2.0), но в результате разрешения получена версия EntityFramework 6.4.4.",
       "libraryId": "EntityFramework",
       "targetGraphs": [
         ".NETFramework,Version=v4.7.2",
         ".NETFramework,Version=v4.7.2/win",
-        ".NETFramework,Version=v4.7.2/win-arm64",
         ".NETFramework,Version=v4.7.2/win-x64",
         ".NETFramework,Version=v4.7.2/win-x86"
       ]

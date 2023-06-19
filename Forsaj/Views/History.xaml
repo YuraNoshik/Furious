@@ -9,20 +9,20 @@
       Title="History">
 
     <Grid>
-        <TextBox x:Name="tbSearchHistory" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1,21,0,0" VerticalAlignment="Top" Width="241" Height="27" Opacity="0.5" TextWrapping="Wrap" />
+        <TextBox x:Name="tbSearchHistory" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="1,21,0,0" VerticalAlignment="Top" Width="206" Height="27" Opacity="0.5" TextWrapping="Wrap" />
         <DatePicker x:Name="dpHistory" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="417,21,0,0" VerticalAlignment="Top" Height="29" Width="162" />
         <TextBlock Text="Поиск клиента"
             Foreground="White"
-            FontSize="12"
+            FontSize="16"
             FontWeight="Medium"
             FontFamily="Montserrat"                             
-            Margin="2,3,457,464" RenderTransformOrigin="0.5,0.533"/>
+            Margin="1,1,458,462" RenderTransformOrigin="0.5,0.533"/>
         <TextBlock Text="Поиск по дате"
             Foreground="White"
-            FontSize="12"
+            FontSize="16"
             FontWeight="Medium"
             FontFamily="Montserrat"                             
-            Margin="417,3,41,464" RenderTransformOrigin="0.5,0.533"/>
+            Margin="417,1,41,462" RenderTransformOrigin="0.5,0.533"/>
         <ListView x:Name="listHistory" Margin="-2,59,2,2" Background="#a4a4a4" Width="586">
             <ListView.Resources>
                 <Style TargetType="{x:Type TextBlock}">
@@ -72,10 +72,10 @@
         </ListView>
         <TextBlock x:Name="lbAmountVisits"
             Foreground="White"
-            FontSize="12"
+            FontSize="16"
             FontWeight="Medium"
             FontFamily="Montserrat"                             
-            Margin="251,27,208,440" RenderTransformOrigin="0.5,0.533"/>
+            Margin="218,27,204,440" RenderTransformOrigin="0.5,0.533"/>
         <Image x:Name="picRefreshDateHistory" Margin="383,25,178,437" Source="/refresh123.png" Stretch="Fill" MouseDown="picRefreshDate_MouseDown"/>
 
     </Grid>

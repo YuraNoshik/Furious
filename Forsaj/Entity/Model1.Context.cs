@@ -32,5 +32,8 @@ namespace Forsaj.Entity
         public virtual DbSet<Staff> Staff { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<VisitHistory> VisitHistory { get; set; }
+        public virtual DbSet<Days> Days { get; set; }
+        public virtual DbSet<Schedule> Schedule { get; set; }
+        public virtual DbSet<Trainers> Trainers { get; set; }
     }
 }

@@ -1,0 +1,149 @@
+﻿<Window x:Class="Forsaj.Views.Schedule"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:customcontrols="clr-namespace:Forsaj.CustomControls"
+        mc:Ignorable="d"
+        Title="LoginView" Height="468" Width="400"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+
+    <Border CornerRadius="10"                    
+            BorderThickness="2" Cursor="Hand">
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#f8c703" Offset="0"/>
+                <GradientStop Color="#ee761c" Offset="0.33"/>
+                <GradientStop Color="#f8c703" Offset="0.66"/>
+                <GradientStop Color="#ee761c" Offset="0.1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#2b2b29" Offset="0"/>
+                <GradientStop Color="#252523" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid Cursor="Hand" Margin="0,1,0,-97">
+            <Button x:Name="btnAddTraining" 
+            Command=""
+            BorderThickness="0"
+            Content="Добавить"
+            Foreground="White"
+            FontSize="12"
+            FontFamily="Comic Sans MS"
+            Cursor="Hand"                           
+            Margin="236,397,1,121" Click="btnAddTraining_Click"  >
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#ea7423"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="100" Height="30"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <TextBox x:Name="tbStartTime" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="130,199,0,0" VerticalAlignment="Top" Width="115" Height="24" Opacity="0.5" TextWrapping="Wrap"/>
+            <TextBlock Text="Тренер"
+            Foreground="White"
+            FontSize="12"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                             
+                               Margin="130,78,222,466"/>
+            <TextBlock Text="День недели"
+            Foreground="White"
+            FontSize="12"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                             
+                               Margin="130,130,189,414"/>
+            <TextBlock
+            Foreground="White"
+            FontSize="12"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                             
+                               Margin="130,181,149,365"><Run Language="ru-ru" Text="Начало тренировки"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+            <Button x:Name="btnBackTrainings" 
+            Command=""
+            BorderThickness="0"
+            Content="Назад"
+            Foreground="White"
+            FontSize="12"
+            FontFamily="Comic Sans MS"
+            Cursor="Hand"                           
+            Margin="238,21,-2,489" RenderTransformOrigin="0.5,0.5" Click="btnScheduleBack_Click" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.179"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#ea7423"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="100" Height="30"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}" Cursor="Hand">
+                            <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <TextBlock Text="Описание"
+                Foreground="White"
+                FontSize="12"
+                FontWeight="Medium"
+                FontFamily="Montserrat"                             
+                Margin="90,277,246,268"/>
+            <TextBox x:Name="tbDescription" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="89,296,0,0" VerticalAlignment="Top" Width="200" Height="72" Opacity="0.5" TextWrapping="Wrap"/>
+            <Image Source="/Images/ForsajLogo2PNG.png"
+                Margin="-7,2,297,473"/>
+            <ComboBox x:Name="cbDayOfTheWeek" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="130,149,0,0" VerticalAlignment="Top" Width="115" Opacity="0.5" Height="24"/>
+            <ComboBox x:Name="cbTrainer" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="130,99,0,0" VerticalAlignment="Top" Width="115" Opacity="0.5" Height="24"/>
+            <TextBlock
+                Foreground="White"
+                FontSize="12"
+                FontWeight="Medium"
+                FontFamily="Montserrat"                             
+                Margin="130,227,149,315"><Run Language="ru-ru" Text="Дата тренировки"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+            <DatePicker x:Name="dpDateOfTraining" HorizontalAlignment="Left" Margin="130,247,0,0" VerticalAlignment="Top" Width="115"/>
+
+
+        </Grid>
+    </Border>
+</Window>
+

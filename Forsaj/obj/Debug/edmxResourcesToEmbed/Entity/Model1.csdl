@@ -6,7 +6,7 @@
     </Key>
     <Property Name="abonementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="abonementType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="abonementCost" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="abonementCost" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
     <NavigationProperty Name="Clients" Relationship="Self.FK__Clients__aboneme__3F466844" FromRole="Abonements" ToRole="Clients" />
     <NavigationProperty Name="Sales" Relationship="Self.FK__Sales__abonement__48CFD27E" FromRole="Abonements" ToRole="Sales" />
   </EntityType>
@@ -167,5 +167,69 @@
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Staff" EntitySet="Staff" />
     </AssociationSet>
+    <EntitySet Name="Days" EntityType="ForsajFitnessModel.Days" />
+    <EntitySet Name="Schedule" EntityType="ForsajFitnessModel.Schedule" />
+    <EntitySet Name="Trainers" EntityType="ForsajFitnessModel.Trainers" />
+    <AssociationSet Name="FK_Schedule_Days" Association="ForsajFitnessModel.FK_Schedule_Days">
+      <End Role="Days" EntitySet="Days" />
+      <End Role="Schedule" EntitySet="Schedule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Schedule_Trainers" Association="ForsajFitnessModel.FK_Schedule_Trainers">
+      <End Role="Trainers" EntitySet="Trainers" />
+      <End Role="Schedule" EntitySet="Schedule" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Days">
+    <Key>
+      <PropertyRef Name="dayID" />
+    </Key>
+    <Property Name="dayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dayName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Schedule" Relationship="ForsajFitnessModel.FK_Schedule_Days" FromRole="Days" ToRole="Schedule" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="trainingID" />
+    </Key>
+    <Property Name="trainingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="trainerID" Type="Int32" Nullable="false" />
+    <Property Name="dayID" Type="Int32" Nullable="false" />
+    <Property Name="trainingTimeStart" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="trainingDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="trainingDescription" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Days" Relationship="ForsajFitnessModel.FK_Schedule_Days" FromRole="Schedule" ToRole="Days" />
+    <NavigationProperty Name="Trainers" Relationship="ForsajFitnessModel.FK_Schedule_Trainers" FromRole="Schedule" ToRole="Trainers" />
+  </EntityType>
+  <EntityType Name="Trainers">
+    <Key>
+      <PropertyRef Name="trainerID" />
+    </Key>
+    <Property Name="trainerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="trainerFIO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Schedule" Relationship="ForsajFitnessModel.FK_Schedule_Trainers" FromRole="Trainers" ToRole="Schedule" />
+  </EntityType>
+  <Association Name="FK_Schedule_Days">
+    <End Type="ForsajFitnessModel.Days" Role="Days" Multiplicity="1" />
+    <End Type="ForsajFitnessModel.Schedule" Role="Schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Days">
+        <PropertyRef Name="dayID" />
+      </Principal>
+      <Dependent Role="Schedule">
+        <PropertyRef Name="dayID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Schedule_Trainers">
+    <End Type="ForsajFitnessModel.Trainers" Role="Trainers" Multiplicity="1" />
+    <End Type="ForsajFitnessModel.Schedule" Role="Schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trainers">
+        <PropertyRef Name="trainerID" />
+      </Principal>
+      <Dependent Role="Schedule">
+        <PropertyRef Name="trainerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -77,5 +77,33 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Days">
+      <EntityTypeMapping TypeName="ForsajFitnessModel.Days">
+        <MappingFragment StoreEntitySet="Days">
+          <ScalarProperty Name="dayName" ColumnName="dayName" />
+          <ScalarProperty Name="dayID" ColumnName="dayID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedule">
+      <EntityTypeMapping TypeName="ForsajFitnessModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="trainingDescription" ColumnName="trainingDescription" />
+          <ScalarProperty Name="trainingDate" ColumnName="trainingDate" />
+          <ScalarProperty Name="trainingTimeStart" ColumnName="trainingTimeStart" />
+          <ScalarProperty Name="dayID" ColumnName="dayID" />
+          <ScalarProperty Name="trainerID" ColumnName="trainerID" />
+          <ScalarProperty Name="trainingID" ColumnName="trainingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trainers">
+      <EntityTypeMapping TypeName="ForsajFitnessModel.Trainers">
+        <MappingFragment StoreEntitySet="Trainers">
+          <ScalarProperty Name="trainerFIO" ColumnName="trainerFIO" />
+          <ScalarProperty Name="trainerID" ColumnName="trainerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

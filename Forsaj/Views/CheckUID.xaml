@@ -67,7 +67,13 @@
             </Button>
             <Image Source="/Images/ForsajLogo2PNG.png"
                 Margin="-12,8,300,122"/>
-            <TextBox x:Name="tbUID" HorizontalAlignment="Left" VerticalContentAlignment="Center"  Margin="82,101,0,0" Text="Приложите смарт-карту..."  VerticalAlignment="Top" Width="240" Height="27" Opacity="0.5" TextWrapping="Wrap"/>
+            <TextBox x:Name="tbUID" HorizontalAlignment="Left" VerticalContentAlignment="Center"  Margin="82,109,0,0" Text="Приложите смарт-карту..."  VerticalAlignment="Top" Width="240" Height="27" Opacity="0.5" TextWrapping="Wrap"/>
+            <TextBlock Text="UID"
+                Foreground="White"
+                FontSize="12"
+                FontWeight="Medium"
+                FontFamily="Montserrat"                             
+                               Margin="81,90,96,96"/>
 
         </Grid>
     </Border>

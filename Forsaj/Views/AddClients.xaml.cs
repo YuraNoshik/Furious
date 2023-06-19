@@ -186,6 +186,12 @@ namespace Forsaj.Views
                     break;
             }
         }
+
+        private void btnCheckBack_Copy_Click_1(object sender, RoutedEventArgs e)
+        {
+            new AbonementExtension().Show();
+
+        }
     }
 
 }

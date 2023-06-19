@@ -41,7 +41,7 @@ namespace Forsaj.Views
                 cbSort.SelectedIndex = 0;
 
             }
-            timer.Interval = TimeSpan.FromSeconds(0.5);
+            timer.Interval = TimeSpan.FromSeconds(2);
             timer.Start();
             timer.Tick += Timer_Tick;
             LoadClientsToGrid();

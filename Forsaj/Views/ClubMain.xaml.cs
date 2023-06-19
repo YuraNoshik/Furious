@@ -56,7 +56,7 @@ namespace Forsaj.Views
 
         private void btnSchedule_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Content = new Shchedule();
+            Frame.Content = new ScheduleList();
             lbMenuName.Text = "РАСПИСАНИЕ";
         }
 

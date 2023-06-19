@@ -44,7 +44,7 @@
             FontSize="12"
             FontFamily="Comic Sans MS"
             Cursor="Hand"                           
-            Margin="232,424,5,13" Click="btnAdd_Click" >
+            Margin="232,421,5,16" Click="btnAdd_Click" >
 
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
@@ -68,27 +68,27 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <TextBox x:Name="tbName" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="130,96,0,0" VerticalAlignment="Top" Width="115" Height="25" Opacity="0.5" TextWrapping="Wrap"/>
-            <TextBox x:Name="tbSurname"  VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="130,147,0,0" VerticalAlignment="Top" Width="115" Height="24" Opacity="0.5" TextWrapping="Wrap"/>
-            <TextBox x:Name="tbPatronymic"  VerticalContentAlignment="Center " HorizontalAlignment="Left" Margin="130,197,0,0" VerticalAlignment="Top" Width="115" Height="24" Opacity="0.5" TextWrapping="Wrap"/>
+            <TextBox x:Name="tbName" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="132,75,0,0" VerticalAlignment="Top" Width="115" Height="25" Opacity="0.5" TextWrapping="Wrap"/>
+            <TextBox x:Name="tbSurname"  VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="132,126,0,0" VerticalAlignment="Top" Width="115" Height="24" Opacity="0.5" TextWrapping="Wrap"/>
+            <TextBox x:Name="tbPatronymic"  VerticalContentAlignment="Center " HorizontalAlignment="Left" Margin="132,176,0,0" VerticalAlignment="Top" Width="115" Height="24" Opacity="0.5" TextWrapping="Wrap"/>
             <TextBlock Text="Имя"
             Foreground="White"
             FontSize="12"
             FontWeight="Medium"
             FontFamily="Montserrat"                             
-                               Margin="130,80,228,385"/>
+                               Margin="132,59,226,406"/>
             <TextBlock Text="Фамилия"
             Foreground="White"
             FontSize="12"
             FontWeight="Medium"
             FontFamily="Montserrat"                             
-                               Margin="130,130,214,337"/>
+                               Margin="132,109,212,358"/>
             <TextBlock Text="Отчество"
             Foreground="White"
             FontSize="12"
             FontWeight="Medium"
             FontFamily="Montserrat"                             
-                               Margin="130,180,200,285"/>
+                               Margin="132,159,198,306"/>
             <Button x:Name="btnCheckBack" 
             Command=""
             BorderThickness="0"
@@ -97,7 +97,7 @@
             FontSize="12"
             FontFamily="Comic Sans MS"
             Cursor="Hand"                           
-            Margin="238,27,-2,406" RenderTransformOrigin="0.5,0.5" Click="btnCheckBack_Click">
+            Margin="238,17,-2,416" RenderTransformOrigin="0.5,0.5" Click="btnCheckBack_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -134,33 +134,73 @@
                 FontSize="12"
                 FontWeight="Medium"
                 FontFamily="Montserrat"                             
-                Margin="130,229,141,238"/>
-            <TextBox x:Name="tbPhoneNumb" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="130,246,0,0" VerticalAlignment="Top" Width="115" Height="25" Opacity="0.5" TextWrapping="Wrap"/>
-            
+                Margin="132,208,139,259"/>
+            <TextBox x:Name="tbPhoneNumb" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="132,0,0,0" VerticalAlignment="Center" Width="115" Height="25" Opacity="0.5" TextWrapping="Wrap"/>
 
-            <ComboBox x:Name="cbAbonements" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="130,297,0,0" VerticalAlignment="Top" Width="115" Opacity="0.5" Height="24" SelectionChanged="cbAbonements_SelectionChanged"/>
+
+            <ComboBox x:Name="cbAbonements" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="132,276,0,0" VerticalAlignment="Top" Width="115" Opacity="0.5" Height="24" SelectionChanged="cbAbonements_SelectionChanged"/>
             <TextBlock Text="Абонемент"
                 Foreground="White"
                 FontSize="12"
                 FontWeight="Medium"
                 FontFamily="Montserrat"                             
-                Margin="130,280,141,186"/>
+                Margin="132,259,139,207"/>
             <TextBlock Text="UID карты"
                 Foreground="White"
                 FontSize="12"
                 FontWeight="Medium"
                 FontFamily="Montserrat"                             
-                Margin="130,382,141,84"/>
-            <TextBox x:Name="tbUID" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="130,400,0,0" VerticalAlignment="Top" Width="115" Height="24" Opacity="0.5" TextWrapping="Wrap"/>
+                Margin="132,361,139,105"/>
+            <TextBox x:Name="tbUID" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="132,379,0,0" VerticalAlignment="Top" Width="115" Height="24" Opacity="0.5" TextWrapping="Wrap"/>
             <TextBlock Text="Количество занятий"
                 Foreground="White"
                 FontSize="12"
                 FontWeight="Medium"
                 FontFamily="Montserrat"                             
-                Margin="130,331,120,135"/>
-            <TextBox x:Name="tbCountOfTrainings" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="130,349,0,0" VerticalAlignment="Top" Width="115" Height="24" Opacity="0.5" TextWrapping="Wrap"/>
+                Margin="132,310,118,156"/>
+            <TextBox x:Name="tbCountOfTrainings" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="132,328,0,0" VerticalAlignment="Top" Width="115" Height="24" Opacity="0.5" TextWrapping="Wrap"/>
             <Image Source="/Images/ForsajLogo2PNG.png"
-                Margin="-62,8,224,391"/>
+                Margin="8,5,312,394"/>
+            <Button x:Name="btnCheckBack_Copy" 
+                Command=""
+                BorderThickness="0"
+                Content="Продлить"
+                Foreground="White"
+                FontSize="12"
+                FontFamily="Comic Sans MS"
+                Cursor="Hand"                           
+                Margin="-3,417,239,16" RenderTransformOrigin="0.5,0.5" Click="btnCheckBack_Copy_Click_1" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.179"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#ea7423"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="100" Height="30"
+                            CornerRadius="20"
+                            Background="{TemplateBinding Background}" Cursor="Hand">
+                            <ContentPresenter VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
 
 
         </Grid>

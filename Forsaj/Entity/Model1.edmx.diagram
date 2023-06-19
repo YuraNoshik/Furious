@@ -17,6 +17,11 @@
         <AssociationConnector Association="ForsajFitnessModel.FK__Sales__clientID__49C3F6B7" ManuallyRouted="false" />
         <AssociationConnector Association="ForsajFitnessModel.FK__VisitHist__clien__4222D4EF" ManuallyRouted="false" />
         <AssociationConnector Association="ForsajFitnessModel.FK__Staff__roleID__44FF419A" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ForsajFitnessModel.Days" Width="1.5" PointX="7.375" PointY="9.375" />
+        <EntityTypeShape EntityType="ForsajFitnessModel.Schedule" Width="1.5" PointX="9.625" PointY="5" />
+        <EntityTypeShape EntityType="ForsajFitnessModel.Trainers" Width="1.5" PointX="7.375" PointY="5.375" />
+        <AssociationConnector Association="ForsajFitnessModel.FK_Schedule_Days" />
+        <AssociationConnector Association="ForsajFitnessModel.FK_Schedule_Trainers" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

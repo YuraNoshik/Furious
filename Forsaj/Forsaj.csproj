@@ -64,6 +64,9 @@
     <Compile Include="Entity\Clients.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Days.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -85,14 +88,23 @@
     <Compile Include="Entity\Sales.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Schedule.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Staff.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Trainers.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\VisitHistory.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AbonementExtension.xaml.cs">
+      <DependentUpon>AbonementExtension.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddClients.xaml.cs">
       <DependentUpon>AddClients.xaml</DependentUpon>
@@ -124,8 +136,11 @@
     <Compile Include="Views\Scaning.xaml.cs">
       <DependentUpon>Scaning.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Shchedule.xaml.cs">
-      <DependentUpon>Shchedule.xaml</DependentUpon>
+    <Compile Include="Views\Schedule.xaml.cs">
+      <DependentUpon>Schedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScheduleList.xaml.cs">
+      <DependentUpon>ScheduleList.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Tools.xaml.cs">
       <DependentUpon>Tools.xaml</DependentUpon>
@@ -149,6 +164,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AbonementExtension.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AddClients.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,7 +208,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Shchedule.xaml">
+    <Page Include="Views\Schedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ScheduleList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -244,6 +267,9 @@
     </PackageReference>
     <PackageReference Include="EntityFramework.ru">
       <Version>6.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Extended.Wpf.Toolkit">
+      <Version>4.5.0</Version>
     </PackageReference>
     <PackageReference Include="NFC-ACR122U">
       <Version>1.0.0</Version>
