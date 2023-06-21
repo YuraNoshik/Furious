@@ -123,16 +123,13 @@ namespace Forsaj.Views
 
                             // Закройте форму редактирования
                             Close();
-                        //}
-                        //else
-                        //{
-                        //    MessageBox.Show("Клиент не найден в базе данных.");
-                        //}
-                    }
-                    else
-                    {
-                        MessageBox.Show("Такой UID уже существует");
-                    }
+                         }
+                        else
+                        {
+                            MessageBox.Show("Клиент не найден в базе данных.");
+                           }
+                
+                    
 
                 }
             }

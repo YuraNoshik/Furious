@@ -140,6 +140,7 @@ namespace Forsaj.Views
                 else
                 {
                     MessageBox.Show("Клиент с таким UID не найден!");
+                    timer.Stop();
                 }
             }
         }
@@ -167,6 +168,11 @@ namespace Forsaj.Views
                     tbCountOfTrainings.Text = Convert.ToString(amountOfTrainings = 12);
                     break;
             }
+        }
+
+        private void btnCheckBack_Click(object sender, RoutedEventArgs e)
+        {
+            Close();    
         }
     }
 }

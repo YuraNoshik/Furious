@@ -94,7 +94,7 @@
                 FontSize="12"
                 FontFamily="Comic Sans MS"
                 Cursor="Hand"                           
-                Margin="260,16,37,240" RenderTransformOrigin="0.5,0.5" >
+                Margin="260,16,37,240" RenderTransformOrigin="0.5,0.5" Click="btnCheckBack_Click" >
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
