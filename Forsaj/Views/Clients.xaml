@@ -105,7 +105,7 @@
             BorderThickness="0"
             Content="Удалить"
             Foreground="White"
-            FontSize="16"
+            FontSize="12"
             FontFamily="Comic Sans MS"
             Cursor="Hand"                           
             Margin="460,-58,31,500" Click="DelClients" >
@@ -123,7 +123,7 @@
 
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="100" Height="35"
+                    <Border Width="100" Height="30"
                         CornerRadius="20"
                         Background="{TemplateBinding Background}">
                         <ContentPresenter VerticalAlignment="Center"
@@ -137,10 +137,10 @@
             BorderThickness="0"
             Content="Добавить"
             Foreground="White"
-            FontSize="16"
+            FontSize="12"
             FontFamily="Comic Sans MS"
             Cursor="Hand"                           
-            Margin="350,-58,142,500" Click="btnAddClients_Click" >
+            Margin="352,-58,140,500" Click="btnAddClients_Click" >
 
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
@@ -155,7 +155,7 @@
 
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="100" Height="35"
+                    <Border Width="100" Height="30"
                         CornerRadius="20"
                         Background="{TemplateBinding Background}">
                         <ContentPresenter VerticalAlignment="Center"
@@ -164,16 +164,46 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <TextBox x:Name="tbSearch" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="-19,-11,0,0" VerticalAlignment="Top" Width="241" Height="27" Opacity="0.5" TextWrapping="Wrap" MouseDown="tbSearch_MouseDown" TextChanged="tbSearch_TextChanged"/>
-        <Button x:Name="btnScan" 
+        <TextBox x:Name="tbSearch" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="-19,-11,0,0" VerticalAlignment="Top" Width="241" Height="27" Opacity="0.5" TextWrapping="Wrap" MouseDown="tbSearch_MouseDown" TextChanged="tbSearch_TextChanged">
+            <!--<--><!--TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Foreground" Value="Gray"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="Text" Value=""/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="False">
+                            <Setter Property="Foreground" Value="Gray"/>
+                            <Setter Property="Text" Value="Поиск клиента..."/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>-->
+        </TextBox>
+        <ComboBox x:Name="cbAbonement" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="426,-11,0,0" VerticalAlignment="Top" Width="139" Opacity="0.5" Height="28" SelectionChanged="cbAbonement_SelectionChanged"/>
+        <ComboBox x:Name="cbSort" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="255,-11,0,0" VerticalAlignment="Top" Width="136" Opacity="0.5" Height="28" SelectionChanged="cbSort_SelectionChanged"/>
+        <TextBlock Text="Количество клиентов:"
+            Foreground="White"
+            FontSize="12"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                             
+            Margin="-20,-53,447,518" Width="NaN"/>
+        <TextBlock x:Name="lbCountAll" Text="0"
+            Foreground="White"
+            FontSize="12"
+            FontWeight="Medium"
+            FontFamily="Montserrat"                             
+            Margin="115,-52,460,518"/>
+        <Button x:Name="btnScan_Copy" 
             Command=""
             BorderThickness="0"
             Content="Пропуск"
             Foreground="White"
-            FontSize="16"
+            FontSize="12"
             FontFamily="Comic Sans MS"
             Cursor="Hand"                           
-            Margin="-15,-58,477,499" Click="btnScan_Click" >
+            Margin="192,-58,270,499" Click="btnScan_Click" RenderTransformOrigin="0.522,0.602" >
 
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
@@ -188,7 +218,7 @@
 
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="135"  Height="35"
+                    <Border Width="120"  Height="30"
                         CornerRadius="20"
                         Background="{TemplateBinding Background}" Cursor="Hand">
                         <ContentPresenter VerticalAlignment="Center"
@@ -197,19 +227,11 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <ComboBox x:Name="cbAbonement" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="426,-11,0,0" VerticalAlignment="Top" Width="139" Opacity="0.5" Height="28" SelectionChanged="cbAbonement_SelectionChanged"/>
-        <ComboBox x:Name="cbSort" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="255,-11,0,0" VerticalAlignment="Top" Width="136" Opacity="0.5" Height="28" SelectionChanged="cbSort_SelectionChanged"/>
-        <TextBlock Text="Количество клиентов:"
+        <TextBlock
             Foreground="White"
-            FontSize="16"
+            FontSize="12"
             FontWeight="Medium"
             FontFamily="Montserrat"                             
-            Margin="142,-47,285,512" Width="NaN"/>
-        <TextBlock x:Name="lbCountAll" Text="0"
-            Foreground="White"
-            FontSize="16"
-            FontWeight="Medium"
-            FontFamily="Montserrat"                             
-            Margin="322,-47,253,513"/>
+            Margin="-20,-31,447,496" Width="NaN"><Run Text="Поиск "/><Run Language="ru-ru" Text="к"/><Run Text="лиентов"/></TextBlock>
     </Grid>
 </Page>

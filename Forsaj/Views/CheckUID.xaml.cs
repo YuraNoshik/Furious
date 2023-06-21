@@ -40,7 +40,7 @@ namespace Forsaj.Views
                 MessageBox.Show(this, "Failed to find a reader connected to the system", "No reader connected");
             }
             timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1); // Интервал времени, например, 1 секунда
+            timer.Interval = TimeSpan.FromSeconds(2); // Интервал времени, например, 1 секунда
             timer.Tick += Timer_Tick;
 
         }

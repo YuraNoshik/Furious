@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yuran\\Source\\Repos\\Furious\\Forsaj\\Forsaj.csproj": {}
+    "C:\\Users\\yuran\\source\\repos\\Furious\\Forsaj\\Forsaj.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yuran\\Source\\Repos\\Furious\\Forsaj\\Forsaj.csproj": {
+    "C:\\Users\\yuran\\source\\repos\\Furious\\Forsaj\\Forsaj.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yuran\\Source\\Repos\\Furious\\Forsaj\\Forsaj.csproj",
+        "projectUniqueName": "C:\\Users\\yuran\\source\\repos\\Furious\\Forsaj\\Forsaj.csproj",
         "projectName": "Forsaj",
-        "projectPath": "C:\\Users\\yuran\\Source\\Repos\\Furious\\Forsaj\\Forsaj.csproj",
+        "projectPath": "C:\\Users\\yuran\\source\\repos\\Furious\\Forsaj\\Forsaj.csproj",
         "packagesPath": "C:\\Users\\yuran\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yuran\\Source\\Repos\\Furious\\Forsaj\\obj\\",
+        "outputPath": "C:\\Users\\yuran\\source\\repos\\Furious\\Forsaj\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [

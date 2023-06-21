@@ -44,19 +44,19 @@ namespace Forsaj.Views
             timer.Interval = TimeSpan.FromSeconds(1); // Интервал времени, например, 1 секунда
             timer.Tick += Timer_Tick;
 
-            timer.Start();
         }
 
         private void Acr122u_CardInserted(PCSC.ICardReader reader)
         {
             timer.Start();
             acr122u.ReadId = BitConverter.ToString(acr122u.GetUID(reader)).Replace("-", "");
-
+            
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             tbChangePasswordPassword.Text = acr122u.ReadId;
+            timer.Stop();
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -87,6 +87,7 @@ namespace Forsaj.Views
                 if (staff == null)
                 {
                     MessageBox.Show("Такого пользователя нет");
+                    timer.Stop();
                     return;
                 }
                 else
@@ -96,11 +97,14 @@ namespace Forsaj.Views
                     
                     try
                     {
+                        timer.Stop();
                         userEntity.SaveChanges();	//Фиксируем изменения в БД
                         MessageBox.Show("Пароль успешно изменен!");
+
                     }
                     catch
                     {
+                        timer.Stop();
                         MessageBox.Show("Не удалось изменить пароль пользователя");
                         return;
                     }

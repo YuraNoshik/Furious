@@ -40,7 +40,7 @@
             FontSize="12"
             FontFamily="Comic Sans MS"
             Cursor="Hand"                           
-            Margin="122,184,110,249" Click="btnCheck_Click" >
+            Margin="125,172,107,261" Click="btnCheck_Click" >
 
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
@@ -55,7 +55,7 @@
 
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Width="150" Height="40"
+                        <Border Width="120" Height="30"
                         CornerRadius="20"
                         Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
@@ -94,7 +94,7 @@
             FontSize="12"
             FontFamily="Comic Sans MS"
             Cursor="Hand"                           
-            Margin="216,12,22,421" Click="btnCheckBack_Click">
+            Margin="230,17,8,416" Click="btnCheckBack_Click">
 
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
@@ -109,7 +109,7 @@
 
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Width="150" Height="40"
+                        <Border Width="100" Height="30"
                         CornerRadius="20"
                         Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"

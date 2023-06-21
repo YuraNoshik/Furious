@@ -12,14 +12,14 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <DatePicker x:Name="dpSchedule" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="353,21,0,0" VerticalAlignment="Top" Height="29" Width="127" SelectedDateChanged="dpSchedule_SelectedDateChanged" />
+        <DatePicker x:Name="dpSchedule" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="451,46,0,0" VerticalAlignment="Top" Height="29" Width="127" SelectedDateChanged="dpSchedule_SelectedDateChanged" />
         <TextBlock Text="Поиск по дате"
             Foreground="White"
-            FontSize="16"
+            FontSize="12"
             FontWeight="Medium"
             FontFamily="Montserrat"                             
-            Margin="353,0,106,464" RenderTransformOrigin="0.5,0.533"/>
-        <ListView x:Name="ListSchedule" Margin="-2,59,2,2" Background="#a4a4a4" Width="586">
+            Margin="451,24,8,440" RenderTransformOrigin="0.5,0.533"/>
+        <ListView x:Name="ListSchedule" Margin="-2,84,2,2" Background="#a4a4a4" Width="586">
             <ListView.Resources>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="Foreground" Value="Black"/>
@@ -66,18 +66,18 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Image x:Name="picRefreshDateHistory" Margin="321,26,240,436" Source="/refresh123.png" Stretch="Fill" MouseDown="picRefreshDateHistory_MouseDown"/>
-        <ComboBox x:Name="cbTrainersList" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="-2,21,0,0" VerticalAlignment="Top" Width="140" Opacity="0.5" Height="28" SelectionChanged="cbTrainersList_SelectionChanged" />
-        <ComboBox x:Name="cbDayList" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="164,21,0,0" VerticalAlignment="Top" Width="140" Opacity="0.5" Height="28" SelectionChanged="cbDayList_SelectionChanged" />
+        <Image x:Name="picRefreshDateHistory" Margin="412,49,149,413" Source="/refresh123.png" Stretch="Fill" MouseDown="picRefreshDateHistory_MouseDown"/>
+        <ComboBox x:Name="cbTrainersList" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="-2,43,0,0" VerticalAlignment="Top" Width="140" Opacity="0.5" Height="28" SelectionChanged="cbTrainersList_SelectionChanged" />
+        <ComboBox x:Name="cbDayList" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="164,44,0,0" VerticalAlignment="Top" Width="140" Opacity="0.5" Height="28" SelectionChanged="cbDayList_SelectionChanged" />
         <Button x:Name="btnDeleteClients" 
             Command=""
             BorderThickness="0"
             Content="Удалить"
             Foreground="White"
-            FontSize="16"
+            FontSize="12"
             FontFamily="Comic Sans MS"
             Cursor="Hand"                           
-            Margin="497,13,0,429" Click="btnDeleteClients_Click_1" >
+            Margin="91,-5,406,447" Click="btnDeleteClients_Click_1" >
 
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
@@ -97,7 +97,7 @@
                         BorderThickness="0"
                         Content="Удалить"
                         Foreground="White"
-                        FontSize="16"
+                        FontSize="12"
                         FontFamily="Comic Sans MS"
                         Cursor="Hand">
 
@@ -114,7 +114,7 @@
 
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Width="80" Height="35"
+                                <Border Width="80" Height="30"
                                     CornerRadius="20"
                                     Background="{TemplateBinding Background}">
                                     <ContentPresenter VerticalAlignment="Center"
@@ -131,10 +131,10 @@
             BorderThickness="0"
             Content="Удалить"
             Foreground="White"
-            FontSize="16"
+            FontSize="12"
             FontFamily="Comic Sans MS"
             Cursor="Hand"                           
-            Margin="497,-15,0,457" Click="btnAddTraininigs_Click" >
+            Margin="-9,-5,506,447" Click="btnAddTraininigs_Click" >
 
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
@@ -154,7 +154,7 @@
                         BorderThickness="0"
                         Content="Добавить"
                         Foreground="White"
-                        FontSize="16"
+                        FontSize="12"
                         FontFamily="Comic Sans MS"
                         Cursor="Hand" Click="btnDeleteClients_Click">
 
@@ -171,7 +171,7 @@
 
                         <Button.Template>
                             <ControlTemplate TargetType="{x:Type Button}">
-                                <Border Width="80" Height="35"
+                                <Border Width="80" Height="30"
                                     CornerRadius="20"
                                     Background="{TemplateBinding Background}">
                                     <ContentPresenter VerticalAlignment="Center"

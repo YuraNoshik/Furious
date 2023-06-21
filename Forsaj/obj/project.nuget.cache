@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/kyowceBPDuacpTqdTt2piNs+nt8gC8XB4Y5MalIg4IyEYrugmdTUIPp465FxnbDAPpK4h/yRkvKtpXDRud/ng==",
+  "dgSpecHash": "eJhqXjiaIGEfpBNGRx8tKYX626BM2DDz1jFa2urOhwStcy2WrsrtcA80h6kk2g2VIe2ulZaql8QVXdc5fWMRpA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yuran\\Source\\Repos\\Furious\\Forsaj\\Forsaj.csproj",
+  "projectFilePath": "C:\\Users\\yuran\\source\\repos\\Furious\\Forsaj\\Forsaj.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yuran\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\yuran\\.nuget\\packages\\entityframework.ru\\6.2.0\\entityframework.ru.6.2.0.nupkg.sha512",

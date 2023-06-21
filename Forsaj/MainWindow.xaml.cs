@@ -29,7 +29,7 @@ namespace Forsaj
             }
             catch (ArgumentException)
             {
-                MessageBox.Show(this, "Failed to find a reader connected to the system", "No reader connected");
+                MessageBox.Show(this, "Считыватель не подключен!");
             }
             timer.Interval = TimeSpan.FromSeconds(1);
 

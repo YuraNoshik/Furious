@@ -13,14 +13,12 @@
         <DatePicker x:Name="dpHistory" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="417,21,0,0" VerticalAlignment="Top" Height="29" Width="162" />
         <TextBlock Text="Поиск клиента"
             Foreground="White"
-            FontSize="16"
-            FontWeight="Medium"
+            FontSize="12"
             FontFamily="Montserrat"                             
-            Margin="1,1,458,462" RenderTransformOrigin="0.5,0.533"/>
+            Margin="2,1,457,462" RenderTransformOrigin="0.5,0.533"/>
         <TextBlock Text="Поиск по дате"
             Foreground="White"
-            FontSize="16"
-            FontWeight="Medium"
+            FontSize="12"
             FontFamily="Montserrat"                             
             Margin="417,1,41,462" RenderTransformOrigin="0.5,0.533"/>
         <ListView x:Name="listHistory" Margin="-2,59,2,2" Background="#a4a4a4" Width="586">
